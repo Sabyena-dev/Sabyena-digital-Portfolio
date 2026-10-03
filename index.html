@@ -4,157 +4,303 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Sabyena | IT Portfolio</title>
+    <title>Sabyena | Information Technology</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #0f1115;
-            color: #f5f5f5;
+            background: #080a0f;
+            color: #f5f7fa;
             line-height: 1.6;
         }
 
-        header {
-            min-height: 90vh;
+        /* NAVIGATION */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 8%;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #111827, #0f1115);
+            background: rgba(8, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #1d222c;
         }
 
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #7dd3fc;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: #c7ced8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #7dd3fc;
+        }
+
+        /* HERO */
+
         .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 80px;
+            background:
+                radial-gradient(circle at 80% 20%, #102536 0%, transparent 30%),
+                #080a0f;
+        }
+
+        .hero-content {
             max-width: 800px;
         }
 
-        .hero p:first-child {
-            color: #8ab4f8;
-            font-size: 1rem;
-            margin-bottom: 15px;
+        .small-title {
+            color: #7dd3fc;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #7dd3fc;
         }
 
         .hero h2 {
             font-size: 1.5rem;
             font-weight: normal;
-            color: #b8c0cc;
+            color: #aab3bf;
             margin-bottom: 25px;
         }
 
-        .hero-text {
-            color: #aeb6c2;
+        .hero p {
             max-width: 650px;
-            margin: auto;
+            color: #8993a1;
+            font-size: 1rem;
         }
 
-        .button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 25px;
-            background: #8ab4f8;
-            color: #0f1115;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
+        .buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
+
+        .btn {
+            padding: 13px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #7dd3fc;
+            color: #080a0f;
+        }
+
+        .secondary {
+            border: 1px solid #303844;
+            color: #e5e7eb;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTIONS */
 
         section {
-            max-width: 1000px;
+            padding: 100px 8%;
+            max-width: 1200px;
             margin: auto;
-            padding: 80px 25px;
         }
 
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
+        .section-title {
+            margin-bottom: 45px;
         }
 
-        section h2::after {
-            content: "";
-            display: block;
-            width: 45px;
-            height: 3px;
-            background: #8ab4f8;
-            margin-top: 10px;
+        .section-title p {
+            color: #7dd3fc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+            margin-bottom: 8px;
         }
 
-        .about-text {
-            color: #b8c0cc;
-            max-width: 750px;
+        .section-title h2 {
+            font-size: 2.3rem;
         }
+
+        /* ABOUT */
+
+        .about {
+            color: #aeb7c3;
+            max-width: 800px;
+            font-size: 1.05rem;
+        }
+
+        /* SKILLS */
 
         .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
         }
 
-        .skill {
-            padding: 10px 18px;
-            border: 1px solid #303641;
-            border-radius: 20px;
-            color: #cbd5e1;
-            background: #171a21;
+        .skill-card {
+            padding: 25px;
+            background: #10141b;
+            border: 1px solid #202631;
+            border-radius: 10px;
+            transition: 0.3s;
         }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #7dd3fc;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #87919f;
+            font-size: 0.9rem;
+        }
+
+        /* PROJECTS */
 
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
         }
 
-        .project {
-            background: #171a21;
-            padding: 25px;
-            border: 1px solid #292e38;
-            border-radius: 10px;
+        .project-card {
+            background: #10141b;
+            border: 1px solid #202631;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s;
         }
 
-        .project h3 {
-            margin-bottom: 10px;
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #7dd3fc;
         }
 
-        .project p {
-            color: #aeb6c2;
+        .project-number {
+            color: #7dd3fc;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
         }
 
-        .learning {
-            background: #171a21;
-            border-left: 4px solid #8ab4f8;
-            padding: 25px;
-            color: #b8c0cc;
+        .project-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #8993a1;
+            font-size: 0.92rem;
+        }
+
+        /* LEARNING */
+
+        .learning-box {
+            padding: 35px;
+            background: linear-gradient(135deg, #101821, #0d1117);
+            border-left: 3px solid #7dd3fc;
+            border-radius: 8px;
+        }
+
+        .learning-box p {
+            color: #aeb7c3;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
         }
 
         .contact p {
-            color: #b8c0cc;
-            margin-bottom: 10px;
+            color: #929baa;
+            max-width: 600px;
+            margin: 0 auto 25px;
         }
+
+        .contact a {
+            color: #7dd3fc;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
 
         footer {
             text-align: center;
-            padding: 30px 20px;
-            border-top: 1px solid #292e38;
-            color: #7f8896;
+            padding: 30px;
+            border-top: 1px solid #1d222c;
+            color: #68717d;
+            font-size: 0.85rem;
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 18px 5%;
             }
 
-            .hero h2 {
-                font-size: 1.2rem;
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            section {
+                padding: 75px 6%;
+            }
+
+            .hero h1 {
+                font-size: 3.5rem;
             }
         }
     </style>
@@ -162,126 +308,226 @@
 
 <body>
 
-    <header>
-        <div class="hero">
-            <p>WELCOME TO MY PORTFOLIO</p>
+    <!-- NAVIGATION -->
 
-            <h1>Sabyena</h1>
+    <nav>
+        <div class="logo">Sabyena<span>.</span></div>
 
-            <h2>Information Technology Student</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-            <p class="hero-text">
-                I am developing my technical skills through practical projects,
-                continuous learning, and hands-on experience in Information Technology.
+
+    <!-- HERO -->
+
+    <header class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">Information Technology</p>
+
+            <h1>Hi, I'm <span>Sabyena.</span></h1>
+
+            <h2>Student. Learner. Future Tech Professional.</h2>
+
+            <p>
+                I'm developing my technical skills through education,
+                practical projects, and continuous exploration of technology.
+                This portfolio documents my progress and the work I create along the way.
             </p>
 
-            <a href="#projects" class="button">View My Work</a>
+            <div class="buttons">
+                <a href="#projects" class="btn primary">View My Work</a>
+
+                <a href="#contact" class="btn secondary">Contact Me</a>
+            </div>
+
         </div>
+
     </header>
 
 
+    <!-- ABOUT -->
+
     <section id="about">
-        <h2>About Me</h2>
 
-        <p class="about-text">
-            I am an Information Technology student with an interest in technology,
-            software development, and cybersecurity. I enjoy learning how technology
-            works and applying what I learn through practical projects.
+        <div class="section-title">
+            <p>01 — About</p>
+            <h2>About Me</h2>
+        </div>
 
+        <p class="about">
+            I am an Information Technology student with a growing interest
+            in software development, cybersecurity, and digital technology.
+            I enjoy understanding how technology works and turning what I learn
+            into practical projects.
             <br><br>
-
-            My goal is to continuously develop my technical knowledge, gain practical
-            experience, and build solutions that can make a meaningful impact.
+            I'm currently focused on strengthening my foundations in programming,
+            web development, databases, networking, and computer systems while
+            continuously developing my problem-solving abilities.
         </p>
+
     </section>
 
+
+    <!-- SKILLS -->
 
     <section id="skills">
-        <h2>Technical Skills</h2>
+
+        <div class="section-title">
+            <p>02 — Expertise</p>
+            <h2>Technical Skills</h2>
+        </div>
 
         <div class="skills">
-            <span class="skill">HTML</span>
-            <span class="skill">CSS</span>
-            <span class="skill">Python</span>
-            <span class="skill">Database Fundamentals</span>
-            <span class="skill">Computer Fundamentals</span>
-            <span class="skill">Networking Fundamentals</span>
+
+            <div class="skill-card">
+                <h3>HTML & CSS</h3>
+                <p>Building structured and responsive web pages.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Developing programming fundamentals and logical thinking.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Databases</h3>
+                <p>Learning database concepts, organization, and management.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Networking</h3>
+                <p>Building knowledge of computer networks and connectivity.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Computer Systems</h3>
+                <p>Understanding hardware, software, and computer architecture.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Git & GitHub</h3>
+                <p>Managing projects and learning modern development workflows.</p>
+            </div>
+
         </div>
+
     </section>
 
 
+    <!-- PROJECTS -->
+
     <section id="projects">
-        <h2>Projects</h2>
+
+        <div class="section-title">
+            <p>03 — Selected Work</p>
+            <h2>Projects</h2>
+        </div>
 
         <div class="projects">
 
-            <div class="project">
+            <div class="project-card">
+                <p class="project-number">01</p>
+
                 <h3>Personal Portfolio</h3>
+
                 <p>
-                    A responsive personal portfolio website created to showcase
-                    my skills, projects, and development journey.
+                    A responsive portfolio website designed to document my
+                    technical development, projects, and professional interests.
                 </p>
             </div>
 
-            <div class="project">
-                <h3>Web Development Projects</h3>
+
+            <div class="project-card">
+                <p class="project-number">02</p>
+
+                <h3>Web Development</h3>
+
                 <p>
-                    Practical websites created while developing my understanding
-                    of HTML, CSS, and modern web design.
+                    Practical web projects created while developing my
+                    understanding of HTML, CSS, responsive design, and
+                    user interfaces.
                 </p>
             </div>
 
-            <div class="project">
-                <h3>Future Projects</h3>
+
+            <div class="project-card">
+                <p class="project-number">03</p>
+
+                <h3>More Coming Soon</h3>
+
                 <p>
-                    This section will be updated as I build new projects and
-                    expand my technical skills.
+                    This portfolio will continue to grow as I build more
+                    projects and develop new technical skills.
                 </p>
             </div>
 
         </div>
+
     </section>
 
 
-    <section>
-        <h2>Currently Learning</h2>
+    <!-- CURRENTLY LEARNING -->
 
-        <div class="learning">
+    <section>
+
+        <div class="section-title">
+            <p>04 — Development</p>
+            <h2>Currently Learning</h2>
+        </div>
+
+        <div class="learning-box">
+
             <p>
-                I am currently strengthening my foundations in Information Technology,
-                programming, databases, networking, web development, and other
-                areas of computing.
+                I'm currently strengthening my foundation in Information Technology
+                through programming, web development, databases, networking,
+                computer systems, and practical projects.
+                <br><br>
+                My approach is simple: learn, build, make mistakes, improve,
+                and keep moving forward.
             </p>
+
         </div>
+
     </section>
 
 
-    <section>
-        <h2>Education</h2>
+    <!-- CONTACT -->
 
-        <p class="about-text">
-            Information Technology Student
-        </p>
-    </section>
+    <section id="contact" class="contact">
 
-
-    <section class="contact" id="contact">
-        <h2>Contact</h2>
+        <div class="section-title">
+            <p>05 — Contact</p>
+            <h2>Let's Connect</h2>
+        </div>
 
         <p>
-            I am open to connecting with other students, developers, and technology
-            enthusiasts.
+            I'm always interested in connecting with people who are passionate
+            about technology, learning, and building new ideas.
         </p>
 
-        <p>
-            GitHub: github.com/Sabyena-dev
-        </p>
+        <a href="https://github.com/Sabyena-dev">
+            Visit my GitHub →
+        </a>
+
     </section>
 
+
+    <!-- FOOTER -->
 
     <footer>
-        <p>© 2026 Sabyena. All rights reserved.</p>
+
+        <p>
+            © 2026 Sabyena. Built with HTML & CSS.
+        </p>
+
     </footer>
 
 </body>
-  </html>
+</html>
