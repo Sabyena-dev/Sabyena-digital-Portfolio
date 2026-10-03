@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sabyena | IT Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f1115;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #111827, #0f1115);
+        }
+
+        .hero {
+            max-width: 800px;
+        }
+
+        .hero p:first-child {
+            color: #8ab4f8;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #b8c0cc;
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
+            color: #aeb6c2;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #8ab4f8;
+            color: #0f1115;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        section h2::after {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 3px;
+            background: #8ab4f8;
+            margin-top: 10px;
+        }
+
+        .about-text {
+            color: #b8c0cc;
+            max-width: 750px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 10px 18px;
+            border: 1px solid #303641;
+            border-radius: 20px;
+            color: #cbd5e1;
+            background: #171a21;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            background: #171a21;
+            padding: 25px;
+            border: 1px solid #292e38;
+            border-radius: 10px;
+        }
+
+        .project h3 {
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #aeb6c2;
+        }
+
+        .learning {
+            background: #171a21;
+            border-left: 4px solid #8ab4f8;
+            padding: 25px;
+            color: #b8c0cc;
+        }
+
+        .contact p {
+            color: #b8c0cc;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid #292e38;
+            color: #7f8896;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="hero">
+            <p>WELCOME TO MY PORTFOLIO</p>
+
+            <h1>Sabyena</h1>
+
+            <h2>Information Technology Student</h2>
+
+            <p class="hero-text">
+                I am developing my technical skills through practical projects,
+                continuous learning, and hands-on experience in Information Technology.
+            </p>
+
+            <a href="#projects" class="button">View My Work</a>
+        </div>
+    </header>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+
+        <p class="about-text">
+            I am an Information Technology student with an interest in technology,
+            software development, and cybersecurity. I enjoy learning how technology
+            works and applying what I learn through practical projects.
+
+            <br><br>
+
+            My goal is to continuously develop my technical knowledge, gain practical
+            experience, and build solutions that can make a meaningful impact.
+        </p>
+    </section>
+
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+
+        <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Python</span>
+            <span class="skill">Database Fundamentals</span>
+            <span class="skill">Computer Fundamentals</span>
+            <span class="skill">Networking Fundamentals</span>
+        </div>
+    </section>
+
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A responsive personal portfolio website created to showcase
+                    my skills, projects, and development journey.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Web Development Projects</h3>
+                <p>
+                    Practical websites created while developing my understanding
+                    of HTML, CSS, and modern web design.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Future Projects</h3>
+                <p>
+                    This section will be updated as I build new projects and
+                    expand my technical skills.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Currently Learning</h2>
+
+        <div class="learning">
+            <p>
+                I am currently strengthening my foundations in Information Technology,
+                programming, databases, networking, web development, and other
+                areas of computing.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Education</h2>
+
+        <p class="about-text">
+            Information Technology Student
+        </p>
+    </section>
+
+
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+
+        <p>
+            I am open to connecting with other students, developers, and technology
+            enthusiasts.
+        </p>
+
+        <p>
+            GitHub: github.com/Sabyena-dev
+        </p>
+    </section>
+
+
+    <footer>
+        <p>© 2026 Sabyena. All rights reserved.</p>
+    </footer>
+
+</body>
+  </html>
